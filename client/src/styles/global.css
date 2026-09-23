@@ -1,0 +1,394 @@
+/*----- FILE: global.css | CONTENT: Global styles, reset rules, page typography, and shared element defaults. -----*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  color: #222;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button,
+input {
+  font-family: inherit;
+}
+/*----- ========================================= THEME VARIABLES ========================================= -----*/
+:root {
+  /*----- background-color: Main light-mode page background. -----*/
+  --page-bg: #f5f5f5;
+  /*----- color: Main light-mode text color. -----*/
+  --text-color: #222222;
+  --muted-text: #666666;
+  --soft-text: #777777;
+  --card-bg: #ffffff;
+  --input-bg: #ffffff;
+  --border-color: #e5e5e5;
+  --soft-bg: #eeeeee;
+  --strong-bg: #111111;
+  --strong-text: #ffffff;
+  --hover-bg: #f0f0f0;
+  --shadow-color: rgba(0, 0, 0, 0.08);
+}
+
+html[data-theme="dark"] {
+  /*----- background-color: Dark mode uses layered dark surfaces for comfortable viewing. -----*/
+  --page-bg: #101114;
+  /*----- color: Light text keeps dark mode readable. -----*/
+  --text-color: #f3f4f6;
+  --muted-text: #b7bcc5;
+  --soft-text: #9da3ad;
+  --card-bg: #191b20;
+  --input-bg: #14161a;
+  --border-color: #30343b;
+  --soft-bg: #252930;
+  --strong-bg: #f3f4f6;
+  --strong-text: #111318;
+  --hover-bg: #292d34;
+  --shadow-color: rgba(0, 0, 0, 0.35);
+}
+
+/*----- GLOBAL THEME: Updates the common page colors when Dark Mode is active. -----*/
+body {
+  /*----- background-color: Uses the active theme page background. -----*/
+  background-color: var(--page-bg);
+  /*----- color: Uses the active theme text color. -----*/
+  color: var(--text-color);
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/*----- FORM ELEMENTS: Gives inputs and buttons the active theme colors. -----*/
+input,
+select,
+textarea {
+  /*----- background-color: Matches the active theme input surface. -----*/
+  background-color: var(--input-bg);
+  /*----- color: Matches the active theme text color. -----*/
+  color: var(--text-color);
+  border-color: var(--border-color);
+}
+
+/*----- DARK MODE PAGE SURFACES: Common page/card selectors used throughout MovieMate. -----*/
+html[data-theme="dark"] .home,
+html[data-theme="dark"] .movies-page,
+html[data-theme="dark"] .movie-details-page,
+html[data-theme="dark"] .booking-page,
+html[data-theme="dark"] .summary-page,
+html[data-theme="dark"] .payment-page,
+html[data-theme="dark"] .seat-page,
+html[data-theme="dark"] .confirmation-page,
+html[data-theme="dark"] .my-bookings-page,
+html[data-theme="dark"] .admin-page,
+html[data-theme="dark"] .auth-page {
+  /*----- background-color: Makes full pages use the dark theme surface. -----*/
+  background-color: var(--page-bg);
+  /*----- color: Keeps page text readable in Dark Mode. -----*/
+  color: var(--text-color);
+}
+
+html[data-theme="dark"] .movie-card,
+html[data-theme="dark"] .auth-card,
+html[data-theme="dark"] .admin-card,
+html[data-theme="dark"] .theatre-card,
+html[data-theme="dark"] .summary-movie-card,
+html[data-theme="dark"] .price-card,
+html[data-theme="dark"] .payment-booking-card,
+html[data-theme="dark"] .payment-form,
+html[data-theme="dark"] .confirmation-card,
+html[data-theme="dark"] .history-card,
+html[data-theme="dark"] .empty-bookings,
+html[data-theme="dark"] .booking-section,
+html[data-theme="dark"] .screen-container,
+html[data-theme="dark"] .seat-summary,
+html[data-theme="dark"] .no-movies {
+  /*----- background-color: Changes white cards to dark cards. -----*/
+  background-color: var(--card-bg);
+  /*----- color: Changes card text to light text. -----*/
+  color: var(--text-color);
+  /*----- border: Makes card borders visible against dark backgrounds. -----*/
+  border-color: var(--border-color);
+  /*----- box-shadow: Adds a subtle dark-mode card shadow. -----*/
+  box-shadow: 0 5px 20px var(--shadow-color);
+}
+
+html[data-theme="dark"] .movies-description,
+html[data-theme="dark"] .movie-card-meta,
+html[data-theme="dark"] .movie-details-description,
+html[data-theme="dark"] .booking-header p,
+html[data-theme="dark"] .summary-header p,
+html[data-theme="dark"] .payment-header p,
+html[data-theme="dark"] .my-bookings-header p,
+html[data-theme="dark"] .admin-header p,
+html[data-theme="dark"] .auth-terms,
+html[data-theme="dark"] .forgot-password,
+html[data-theme="dark"] .history-card p,
+html[data-theme="dark"] .history-info,
+html[data-theme="dark"] .summary-detail-item,
+html[data-theme="dark"] .summary-movie-info,
+html[data-theme="dark"] .payment-booking-card p {
+  /*----- color: Applies the softer text color used for secondary information. -----*/
+  color: var(--muted-text);
+}
+
+html[data-theme="dark"] .movie-search,
+html[data-theme="dark"] .filter-button,
+html[data-theme="dark"] .date-button,
+html[data-theme="dark"] .show-button,
+html[data-theme="dark"] .seat:not(.selected):not(.occupied),
+html[data-theme="dark"] .payment-form input,
+html[data-theme="dark"] .form-group input,
+html[data-theme="dark"] .form-group select,
+html[data-theme="dark"] .form-group textarea {
+  /*----- background-color: Dark input and selection surfaces. -----*/
+  background-color: var(--input-bg);
+  /*----- color: Light text provides contrast in Dark Mode. -----*/
+  color: var(--text-color);
+  /*----- border-color: Defines a visible dark-mode control border. -----*/
+  border-color: var(--border-color);
+}
+
+html[data-theme="dark"] .date-button:hover,
+html[data-theme="dark"] .show-button:hover,
+html[data-theme="dark"] .filter-button:hover,
+html[data-theme="dark"] .seat:hover:not(.occupied):not(.selected) {
+  /*----- background-color: Provides visible hover feedback in Dark Mode. -----*/
+  background-color: var(--hover-bg);
+}
+
+html[data-theme="dark"] .summary-movie-label,
+html[data-theme="dark"] .summary-label,
+html[data-theme="dark"] .booking-label,
+html[data-theme="dark"] .payment-label,
+html[data-theme="dark"] .seat-label,
+html[data-theme="dark"] .my-bookings-label,
+html[data-theme="dark"] .admin-label,
+html[data-theme="dark"] .movies-label,
+html[data-theme="dark"] .movie-details-label,
+html[data-theme="dark"] .auth-switch,
+html[data-theme="dark"] .history-label {
+  /*----- color: Keeps small labels readable without overpowering headings. -----*/
+  color: var(--soft-text);
+}
+
+html[data-theme="dark"] .movie-card-title,
+html[data-theme="dark"] .movie-details-info,
+html[data-theme="dark"] .summary-movie-info strong,
+html[data-theme="dark"] .price-total,
+html[data-theme="dark"] .history-info strong,
+html[data-theme="dark"] .empty-bookings h2,
+html[data-theme="dark"] .admin-card-title,
+html[data-theme="dark"] .auth-header,
+html[data-theme="dark"] .payment-form label {
+  /*----- color: Uses the primary light text for important content. -----*/
+  color: var(--text-color);
+}
+
+/*----- AUTHENTICATED USER TEXT: Corrects the navbar user color for Dark Mode. -----*/
+html[data-theme="dark"] .navbar-user,
+html[data-theme="dark"] .logout-button {
+  /*----- color: Ensures navbar account controls remain readable. -----*/
+  color: var(--text-color);
+  /*----- background-color: Uses a dark control surface. -----*/
+  background-color: var(--card-bg);
+  border-color: var(--border-color);
+}
+
+/*----- DARK MODE NAVBAR CONTROLS: Keeps the existing dark navbar visually consistent. -----*/
+.theme-toggle-button {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #333333;
+  border-radius: 50%;
+  /*----- background-color: Transparent button keeps the navbar clean. -----*/
+  background-color: transparent;
+  /*----- color: White icon is visible on the dark navbar. -----*/
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.theme-toggle-button:hover {
+  /*----- background-color: Shows a subtle hover surface. -----*/
+  background-color: #242424;
+  border-color: #555555;
+  transform: rotate(8deg);
+}
+
+.mobile-theme-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 0;
+  border: 0;
+  border-bottom: 1px solid #242424;
+  /*----- background-color: Keeps the mobile theme action transparent. -----*/
+  background-color: transparent;
+  /*----- color: Light text matches the mobile navbar. -----*/
+  color: #d5d5d5;
+  cursor: pointer;
+  text-align: left;
+}
+
+/*----- DARK MODE NAVBAR: The navigation remains dark while page content changes theme. -----*/
+html[data-theme="dark"] .navbar-user {
+  /*----- background-color: Dark account control matches the page theme. -----*/
+  background-color: #191b20;
+}
+
+/*----- DARK MODE BORDERS: Makes common separators visible without becoming too bright. -----*/
+html[data-theme="dark"] .price-divider,
+html[data-theme="dark"] .seat-legend,
+html[data-theme="dark"] .summary-details,
+html[data-theme="dark"] .mobile-menu,
+html[data-theme="dark"] .mobile-menu a {
+  border-color: var(--border-color);
+}
+
+/*----- DARK MODE SECONDARY BUTTONS: Prevents light backgrounds from remaining on common controls. -----*/
+html[data-theme="dark"] .summary-back,
+html[data-theme="dark"] .payment-back-button,
+html[data-theme="dark"] .trailer-button,
+html[data-theme="dark"] .hero-secondary-button {
+  /*----- color: Makes secondary actions readable in Dark Mode. -----*/
+  color: var(--text-color);
+  /*----- background-color: Uses the dark card surface. -----*/
+  background-color: var(--card-bg);
+  border-color: var(--border-color);
+}
+
+/*----- DARK MODE PRIMARY BUTTONS: Keeps primary actions high contrast. -----*/
+html[data-theme="dark"] .book-button,
+html[data-theme="dark"] .continue-button,
+html[data-theme="dark"] .payment-button,
+html[data-theme="dark"] .pay-now-button,
+html[data-theme="dark"] .admin-submit,
+html[data-theme="dark"] .empty-bookings a,
+html[data-theme="dark"] .movie-card-button {
+  /*----- background-color: Light primary buttons contrast with the dark page. -----*/
+  background-color: #f3f4f6;
+  /*----- color: Dark text provides strong button contrast. -----*/
+  color: #111318;
+}
+
+html[data-theme="dark"] .book-button:hover,
+html[data-theme="dark"] .continue-button:hover,
+html[data-theme="dark"] .payment-button:hover,
+html[data-theme="dark"] .pay-now-button:hover,
+html[data-theme="dark"] .admin-submit:hover,
+html[data-theme="dark"] .empty-bookings a:hover,
+html[data-theme="dark"] .movie-card-button:hover {
+  /*----- background-color: Slightly darker hover state for light primary buttons. -----*/
+  background-color: #d8dbe0;
+}
+
+/*----- THEME TRANSITION: Smoothly changes the main document appearance. -----*/
+html,
+body,
+button,
+input,
+select,
+textarea,
+.movie-card,
+.auth-card,
+.admin-card,
+.theatre-card,
+.history-card,
+.payment-form,
+.payment-booking-card,
+.summary-movie-card,
+.price-card,
+.confirmation-card {
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+/*----- DARK MODE AUTH CONTAINER: Converts the complete authentication card to a dark surface. -----*/
+html[data-theme="dark"] .auth-container {
+  /*----- background-color: Dark surface for the login/register container. -----*/
+  background-color: var(--card-bg);
+  box-shadow: 0 15px 50px var(--shadow-color);
+}
+
+html[data-theme="dark"] .input-wrapper {
+  /*----- background-color: Dark input wrapper matches the authentication card. -----*/
+  background-color: var(--input-bg);
+  /*----- color: Light icon/text color improves visibility. -----*/
+  color: var(--soft-text);
+  border-color: var(--border-color);
+}
+
+html[data-theme="dark"] .input-wrapper:focus-within {
+  border-color: #f3f4f6;
+}
+
+html[data-theme="dark"] .password-toggle,
+html[data-theme="dark"] .forgot-password a,
+html[data-theme="dark"] .auth-switch a,
+html[data-theme="dark"] .view-all {
+  /*----- color: Makes authentication and navigation links readable in Dark Mode. -----*/
+  color: #dfe3e8;
+}
+
+html[data-theme="dark"] .view-all:hover,
+html[data-theme="dark"] .forgot-password a:hover {
+  /*----- color: Bright hover text provides clear interaction feedback. -----*/
+  color: #ffffff;
+}
+
+/*----- DARK MODE HEADINGS: Uses light text for content headings outside the dark hero/navbar. -----*/
+html[data-theme="dark"] .movies-header h1,
+html[data-theme="dark"] .section-header h2,
+html[data-theme="dark"] .movie-details-info h1,
+html[data-theme="dark"] .booking-header h1,
+html[data-theme="dark"] .summary-header h1,
+html[data-theme="dark"] .payment-header h1,
+html[data-theme="dark"] .seat-header h1,
+html[data-theme="dark"] .my-bookings-header h1,
+html[data-theme="dark"] .admin-header h1,
+html[data-theme="dark"] .confirmation-card h1,
+html[data-theme="dark"] .auth-header h2,
+html[data-theme="dark"] .admin-card-title,
+html[data-theme="dark"] .movie-card-title {
+  /*----- color: Primary heading color for Dark Mode. -----*/
+  color: var(--text-color);
+}
+
+/*----- DARK MODE FORM LABELS: Keeps labels bright enough against dark form surfaces. -----*/
+html[data-theme="dark"] .form-group label,
+html[data-theme="dark"] .payment-form label,
+html[data-theme="dark"] .admin-card label {
+  /*----- color: High-contrast label text. -----*/
+  color: #e3e6eb;
+}
+
+/*----- DARK MODE INPUT PLACEHOLDER: Keeps placeholder text visible without competing with entered values. -----*/
+html[data-theme="dark"] input::placeholder,
+html[data-theme="dark"] textarea::placeholder {
+  /*----- color: Soft placeholder text for dark inputs. -----*/
+  color: #777f8b;
+}
+
+/*----- DARK MODE HOME SECTION: Makes the movie section below the hero match the page background. -----*/
+html[data-theme="dark"] .movie-section {
+  /*----- background-color: Inherits the dark page surface. -----*/
+  background-color: var(--page-bg);
+}
+
+html[data-theme="dark"] .section-label {
+  /*----- color: Soft label text for the Home page section heading. -----*/
+  color: var(--soft-text);
+}

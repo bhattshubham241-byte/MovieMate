@@ -1,0 +1,62 @@
+/*----- FILE: admin.css | CONTENT: Admin management page styling. | PURPOSE: Styles admin forms, seat configuration, CRUD tables, buttons, and dark mode. -----*/
+
+.admin-page { min-height: calc(100vh - 72px); padding: 55px 40px 90px; background-color: #f5f5f5; color: #222; }
+.admin-header { max-width: 1180px; margin: 0 auto 30px; display: flex; justify-content: space-between; align-items: center; gap: 25px; }
+.admin-label { font-size: 12px; letter-spacing: 2px; font-weight: 800; color: #777; margin: 0 0 8px; }
+.admin-header h1 { font-size: 40px; margin: 0 0 8px; }
+.admin-header p:last-child { color: #777; margin: 0; }
+.admin-badge { background-color: #111; color: #fff; padding: 10px 16px; border-radius: 999px; font-size: 13px; font-weight: 700; }
+.admin-message { max-width: 1180px; margin: 0 auto 20px; padding: 12px 15px; border-radius: 9px; }
+.admin-message.success { background-color: #e8f7ee; color: #16723b; }
+.admin-message.error { background-color: #fff0ef; color: #b42318; }
+.admin-grid { max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+.admin-card { background-color: #fff; border: 1px solid #e5e5e5; border-radius: 15px; padding: 25px; box-shadow: 0 8px 25px rgba(0,0,0,.04); }
+.admin-card-wide { grid-column: 1 / -1; }
+.admin-card-title { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
+.admin-card-title h2 { margin: 0; font-size: 22px; }
+.admin-card-help { color: #777; font-size: 13px; margin: 0 0 22px; }
+.admin-card label { display: block; font-size: 13px; font-weight: 700; margin-bottom: 15px; color: #333; }
+.admin-card label span { font-weight: 400; color: #888; }
+.admin-card input, .admin-card textarea, .admin-card select { width: 100%; margin-top: 7px; padding: 11px 12px; border: 1px solid #d8d8d8; border-radius: 8px; background-color: #fff; color: #222; font: inherit; box-sizing: border-box; }
+.admin-card textarea { min-height: 90px; resize: vertical; }
+.admin-two-columns { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
+.admin-three-columns { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+.seat-config-box { border: 1px solid #ddd; background-color: #fafafa; border-radius: 12px; padding: 17px; margin: 20px 0; }
+.seat-config-box h3 { margin: 0 0 15px; font-size: 16px; }
+.category-row { display: grid; grid-template-columns: 1fr 1fr 130px; gap: 8px; margin-bottom: 9px; }
+.category-row input { margin: 0; }
+.small-action { border: 1px dashed #aaa; background-color: transparent; color: #333; padding: 8px 11px; border-radius: 7px; cursor: pointer; }
+.admin-form-actions { display: flex; gap: 9px; align-items: center; }
+.admin-submit, .cancel-button { border: none; border-radius: 8px; padding: 12px 17px; display: inline-flex; align-items: center; gap: 7px; cursor: pointer; font-weight: 700; }
+.admin-submit { background-color: #111; color: #fff; }
+.admin-submit:hover { background-color: #333; }
+.cancel-button { background-color: #eee; color: #333; }
+.management-section { max-width: 1180px; margin: 35px auto 0; }
+.section-heading { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+.section-heading h2 { margin: 0; font-size: 22px; }
+.section-heading span { color: #777; font-size: 13px; }
+.management-table { background-color: #fff; border: 1px solid #e5e5e5; border-radius: 13px; overflow: hidden; }
+.table-head, .table-row { display: grid; grid-template-columns: 1.4fr 1fr 1.3fr .5fr; gap: 15px; padding: 14px 17px; align-items: center; }
+.table-head { background-color: #f3f3f3; font-size: 12px; font-weight: 800; color: #666; text-transform: uppercase; letter-spacing: .5px; }
+.table-row { border-top: 1px solid #eee; font-size: 13px; }
+.table-row strong, .table-row small { display: block; }
+.table-row small { color: #777; margin-top: 4px; }
+.row-actions { display: flex; gap: 7px; }
+.row-actions button { width: 34px; height: 34px; border: 1px solid #ddd; background-color: #fff; color: #333; border-radius: 7px; cursor: pointer; display: grid; place-items: center; }
+.row-actions button:hover { background-color: #f0f0f0; }
+
+/*----- DARK MODE -----*/
+[data-theme="dark"] .admin-page { background-color: #101010; color: #f4f4f4; }
+[data-theme="dark"] .admin-label, [data-theme="dark"] .admin-header p:last-child, [data-theme="dark"] .admin-card-help, [data-theme="dark"] .section-heading span, [data-theme="dark"] .table-row small { color: #aaa; }
+[data-theme="dark"] .admin-card, [data-theme="dark"] .management-table { background-color: #1b1b1b; border-color: #333; }
+[data-theme="dark"] .admin-card label { color: #ddd; }
+[data-theme="dark"] .admin-card input, [data-theme="dark"] .admin-card textarea, [data-theme="dark"] .admin-card select { background-color: #242424; color: #f5f5f5; border-color: #444; }
+[data-theme="dark"] .seat-config-box, [data-theme="dark"] .table-head { background-color: #242424; border-color: #3b3b3b; }
+[data-theme="dark"] .small-action, [data-theme="dark"] .cancel-button { color: #eee; background-color: #2b2b2b; border-color: #555; }
+[data-theme="dark"] .table-row { border-color: #333; }
+[data-theme="dark"] .row-actions button { background-color: #292929; color: #eee; border-color: #4a4a4a; }
+[data-theme="dark"] .row-actions button:hover { background-color: #333; }
+[data-theme="dark"] .admin-message.success { background-color: #12331f; color: #8be0ad; }
+[data-theme="dark"] .admin-message.error { background-color: #3a1715; color: #ffaaa3; }
+
+@media (max-width: 800px) { .admin-page { padding: 35px 18px 60px; } .admin-header { flex-direction: column; align-items: flex-start; } .admin-grid { grid-template-columns: 1fr; } .admin-card-wide { grid-column: auto; } .admin-three-columns, .admin-two-columns { grid-template-columns: 1fr; } .category-row { grid-template-columns: 1fr; } .table-head { display: none; } .table-row { grid-template-columns: 1fr 1fr; } }

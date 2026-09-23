@@ -1,0 +1,6 @@
+#----- Environment file contains local configuration and must not be committed. -----#
+.env
+
+#----- Dependencies and generated files. -----#
+node_modules
+*.log

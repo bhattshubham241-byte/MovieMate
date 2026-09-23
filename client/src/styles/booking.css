@@ -1,0 +1,253 @@
+/*----- FILE: booking.css | CONTENT: Booking page styling including date buttons, theatre cards, show buttons, and responsive layout. -----*/
+
+.booking-page {
+  min-height: calc(100vh - 72px);
+  padding: 60px 40px 100px;
+  background: #f5f5f5;
+}
+
+.booking-header {
+  max-width: 1100px;
+  margin: 0 auto 45px;
+}
+
+.booking-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.booking-header h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.booking-header p:last-child {
+  color: #777;
+}
+
+/*----- Section -----*/
+
+.booking-section {
+  max-width: 1100px;
+  margin: 0 auto 40px;
+}
+
+.booking-section-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.booking-section-title h2 {
+  font-size: 20px;
+}
+
+/*----- Dates -----*/
+
+.date-list {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.date-button {
+  padding: 12px 20px;
+
+  border: 1px solid #ddd;
+  border-radius: 8px;
+
+  background: #fff;
+
+  cursor: pointer;
+
+  font-weight: 600;
+}
+
+.date-button:hover {
+  border-color: #111;
+}
+
+.date-button.active {
+  background: #111;
+  color: #fff;
+  border-color: #111;
+}
+
+/*----- Theatre -----*/
+
+.theatre-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.theatre-card {
+  background: #fff;
+
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+
+  padding: 25px;
+
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 30px;
+}
+
+.theatre-info h3 {
+  font-size: 19px;
+  margin-bottom: 10px;
+}
+
+.theatre-info p {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  color: #777;
+  font-size: 14px;
+}
+
+.show-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  margin-bottom: 12px;
+}
+
+.show-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.show-button {
+  padding: 10px 15px;
+
+  border: 1px solid #ddd;
+  border-radius: 7px;
+
+  background: #fff;
+
+  cursor: pointer;
+
+  font-size: 13px;
+}
+
+.show-button:hover {
+  border-color: #111;
+}
+
+.show-button.active {
+  background: #111;
+  color: #fff;
+  border-color: #111;
+}
+
+/*----- Footer -----*/
+
+.booking-footer {
+  max-width: 1100px;
+  margin: 30px auto 0;
+
+  display: flex;
+  justify-content: flex-end;
+}
+
+.continue-button {
+  padding: 14px 24px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #111;
+  color: #fff;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.continue-button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+/*----- Responsive -----*/
+
+@media (max-width: 750px) {
+  .booking-page {
+    padding: 40px 20px 80px;
+  }
+
+  .booking-header h1 {
+    font-size: 34px;
+  }
+
+  .theatre-card {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .booking-footer {
+    justify-content: stretch;
+  }
+
+  .continue-button {
+    width: 100%;
+  }
+}
+/*----- DATE LABEL: Keeps the date button content vertically organized. -----*/
+.date-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  min-width: 92px;
+}
+
+/*----- DATE SUBTEXT: Shows the weekday below the date label. -----*/
+.date-button span {
+  font-size: 11px;
+  color: #777;
+}
+
+/*----- ACTIVE DATE SUBTEXT: Uses a light text color on the active dark button. -----*/
+.date-button.active span {
+  color: #fff;
+}
+
+/*----- SHOW PRICE: Displays the ticket price inside each show button. -----*/
+.show-button small {
+  display: block;
+  margin-top: 3px;
+  font-size: 10px;
+  color: #777;
+}
+
+/*----- ACTIVE SHOW PRICE: Keeps the price readable on the active button. -----*/
+.show-button.active small {
+  color: #fff;
+}
+
+/*----- BOOKING MESSAGE: Displays loading, empty, and error messages. -----*/
+.booking-message {
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  color: #777;
+}
+
+/*----- ERROR MESSAGE: Uses red text to indicate an API loading problem. -----*/
+.booking-message.error {
+  color: #b00020;
+}

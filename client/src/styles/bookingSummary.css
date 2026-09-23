@@ -1,0 +1,344 @@
+/*----- ========================= Booking Summary Page ========================= -----*/
+
+.summary-page {
+  min-height: calc(100vh - 72px);
+  padding: 60px 40px 100px;
+  background: #f5f5f5;
+}
+
+
+/*----- ========================= Header ========================= -----*/
+
+.summary-header {
+  max-width: 1000px;
+  margin: 0 auto 40px;
+}
+
+.summary-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.summary-header h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.summary-header p:last-child {
+  color: #777;
+}
+
+
+/*----- ========================= Main Container ========================= -----*/
+
+.summary-container {
+  max-width: 1000px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+
+/*----- ========================= Movie Card ========================= -----*/
+
+.summary-movie-card {
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+
+  padding: 20px;
+
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.summary-movie-card img {
+  width: 90px;
+  height: 120px;
+
+  object-fit: cover;
+
+  border-radius: 8px;
+}
+
+.summary-movie-info {
+  flex: 1;
+}
+
+.summary-movie-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #888;
+
+  margin-bottom: 7px;
+}
+
+.summary-movie-info h2 {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.summary-movie-info > p:last-child {
+  font-size: 14px;
+  color: #777;
+}
+
+.summary-rating {
+  display: inline-block;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  margin-bottom: 8px;
+}
+
+
+/*----- ========================= Booking Details ========================= -----*/
+
+.summary-details {
+  background: #fff;
+
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+
+  padding: 25px;
+}
+
+.summary-details h2 {
+  font-size: 20px;
+  margin-bottom: 25px;
+}
+
+.summary-detail-item {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 15px;
+
+  padding: 18px 0;
+
+  border-bottom: 1px solid #eee;
+}
+
+.summary-detail-item:first-of-type {
+  padding-top: 0;
+}
+
+.summary-detail-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.summary-icon {
+  width: 40px;
+  height: 40px;
+
+  border-radius: 8px;
+
+  background: #f5f5f5;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #333;
+
+  flex-shrink: 0;
+}
+
+.summary-detail-item div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.summary-detail-item span {
+  font-size: 12px;
+  color: #888;
+}
+
+.summary-detail-item strong {
+  font-size: 15px;
+}
+
+.summary-detail-item p {
+  font-size: 13px;
+  color: #777;
+}
+
+
+/*----- ========================= Price Card ========================= -----*/
+
+.price-card {
+  background: #fff;
+
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+
+  padding: 25px;
+}
+
+.price-card h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 14px;
+
+  font-size: 14px;
+  color: #666;
+}
+
+.price-row span:last-child {
+  font-weight: 600;
+  color: #222;
+}
+
+.price-divider {
+  height: 1px;
+  background: #eee;
+
+  margin: 20px 0;
+}
+
+.price-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 25px;
+}
+
+.price-total span {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.price-total strong {
+  font-size: 22px;
+}
+
+
+/*----- ========================= Payment Button ========================= -----*/
+
+.payment-button {
+  width: 100%;
+
+  padding: 14px 20px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #111;
+  color: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.payment-button:hover:not(:disabled) {
+  background: #333;
+}
+
+.payment-button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+
+/*----- ========================= Back Button ========================= -----*/
+
+.summary-back {
+  max-width: 1000px;
+
+  margin: 25px auto 0;
+}
+
+.summary-back button {
+  border: none;
+  background: transparent;
+
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  color: #555;
+
+  cursor: pointer;
+}
+
+.summary-back button:hover {
+  color: #111;
+}
+
+
+/*----- ========================= Loading ========================= -----*/
+
+.summary-loading {
+  min-height: 60vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #777;
+}
+
+
+/*----- ========================= Responsive ========================= -----*/
+
+@media (max-width: 750px) {
+
+  .summary-page {
+    padding: 40px 20px 80px;
+  }
+
+  .summary-header h1 {
+    font-size: 34px;
+  }
+
+  .summary-movie-card {
+    align-items: flex-start;
+  }
+
+  .summary-movie-card img {
+    width: 75px;
+    height: 100px;
+  }
+
+  .summary-movie-info h2 {
+    font-size: 20px;
+  }
+
+  .summary-details,
+  .price-card {
+    padding: 20px;
+  }
+
+}

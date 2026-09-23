@@ -1,0 +1,62 @@
+[
+  {
+    "title": "Interstellar",
+    "description": "A team of explorers travels through a wormhole in space to find a new home for humanity.",
+    "genre": [
+      "Adventure",
+      "Drama",
+      "Sci-Fi"
+    ],
+    "language": "English",
+    "duration": "2h 49m",
+    "releaseDate": "2014-11-07",
+    "poster": "https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg",
+    "trailer": "https://www.youtube.com/watch?v=zSWdZVtXT7E",
+    "rating": 8.7
+  },
+  {
+    "title": "Inception",
+    "description": "A skilled extractor enters dreams to steal secrets and is given a dangerous task involving an idea.",
+    "genre": [
+      "Action",
+      "Sci-Fi",
+      "Thriller"
+    ],
+    "language": "English",
+    "duration": "2h 28m",
+    "releaseDate": "2010-07-16",
+    "poster": "https://image.tmdb.org/t/p/w500/oYuLEt3zVCKq57qu2F8dT7NIa6f.jpg",
+    "trailer": "https://www.youtube.com/watch?v=YoHD9XEInc0",
+    "rating": 8.8
+  },
+  {
+    "title": "The Dark Knight",
+    "description": "Batman faces a criminal mastermind whose chaotic plans push Gotham and its heroes to their limits.",
+    "genre": [
+      "Action",
+      "Crime",
+      "Drama"
+    ],
+    "language": "English",
+    "duration": "2h 32m",
+    "releaseDate": "2008-07-18",
+    "poster": "https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg",
+    "trailer": "https://www.youtube.com/watch?v=EXeTwQWrcwY",
+    "rating": 9.0
+  },
+  {
+    "title": "Avengers: Endgame",
+    "description": "The Avengers assemble for one final mission to reverse the devastating events that changed their universe.",
+    "genre": [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
+    ],
+    "language": "English",
+    "duration": "3h 1m",
+    "releaseDate": "2019-04-26",
+    "poster": "https://image.tmdb.org/t/p/w500/or06FN3Dka5tukK1e9sl16pB3iy.jpg",
+    "trailer": "https://www.youtube.com/watch?v=TcMBFSGVi1c",
+    "rating": 8.3
+  }
+]

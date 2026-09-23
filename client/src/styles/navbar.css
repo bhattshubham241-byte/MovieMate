@@ -1,0 +1,284 @@
+/*----- ========================================= MovieMate Navbar ========================================= -----*/
+
+.navbar {
+  width: 100%;
+  background-color: #111111;
+  color: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid #292929;
+}
+
+.navbar-container {
+  max-width: 1400px;
+  height: 72px;
+  margin: 0 auto;
+  padding: 0 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/*----- ========================================= Logo ========================================= -----*/
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
+
+  transition: opacity 0.2s ease;
+}
+
+.navbar-logo:hover {
+  opacity: 0.85;
+}
+
+.logo-icon {
+  font-size: 28px;
+}
+
+/*----- ========================================= Navigation Links ========================================= -----*/
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  margin-left: auto;
+  margin-right: 40px;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  color: #cfcfcf;
+  font-size: 15px;
+  font-weight: 500;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+/*----- ========================================= Navbar Actions ========================================= -----*/
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.search-button {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #333333;
+  border-radius: 50%;
+
+  background-color: transparent;
+  color: #ffffff;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.search-button:hover {
+  background-color: #242424;
+  border-color: #555555;
+}
+
+.login-button,
+.register-button {
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  padding: 0 18px;
+
+  border-radius: 8px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.login-button {
+  color: #ffffff;
+  background-color: transparent;
+  border: 1px solid #333333;
+}
+
+.login-button:hover {
+  background-color: #242424;
+}
+
+.register-button {
+  color: #111111;
+  background-color: #ffffff;
+}
+
+.register-button:hover {
+  background-color: #e5e5e5;
+  transform: translateY(-1px);
+}
+
+/*----- ========================================= Mobile Menu Button ========================================= -----*/
+
+.mobile-menu-button {
+  display: none;
+
+  width: 42px;
+  height: 42px;
+
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  background: transparent;
+  color: #ffffff;
+
+  cursor: pointer;
+}
+
+/*----- ========================================= Mobile Menu ========================================= -----*/
+
+.mobile-menu {
+  display: none;
+}
+
+/*----- ========================================= Responsive Design ========================================= -----*/
+
+@media (max-width: 900px) {
+
+  .navbar-links,
+  .navbar-actions {
+    display: none;
+  }
+
+  .mobile-menu-button {
+    display: flex;
+  }
+
+  .mobile-menu {
+    display: flex;
+    flex-direction: column;
+
+    padding: 16px 32px 24px;
+
+    background-color: #111111;
+    border-top: 1px solid #292929;
+  }
+
+  .mobile-menu a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 14px 0;
+
+    color: #d5d5d5;
+    font-size: 15px;
+
+    border-bottom: 1px solid #242424;
+  }
+
+  .mobile-menu a:hover {
+    color: #ffffff;
+  }
+
+}
+
+/*----- ========================================= Small Screens ========================================= -----*/
+
+@media (max-width: 500px) {
+
+  .navbar-container {
+    height: 64px;
+    padding: 0 18px;
+  }
+
+  .navbar-logo {
+    font-size: 21px;
+  }
+
+  .logo-icon {
+    font-size: 24px;
+  }
+
+  .mobile-menu {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+}
+/*----- AUTHENTICATED USER: Displays the logged-in user's first name in the navbar. -----*/
+.navbar-user {
+  /*----- color: Uses the existing navbar text color for consistency. -----*/
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/*----- LOGOUT BUTTON: Gives authenticated users a clear way to end their session. -----*/
+.logout-button {
+  /*----- background-color: White keeps the button clean against the navbar. -----*/
+  background-color: #fff;
+  /*----- color: Dark text provides readable contrast. -----*/
+  color: #222;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 9px 14px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.logout-button:hover {
+  background-color: #f5f5f5;
+}
+
+.mobile-menu button {
+  font: inherit;
+  background: none;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+
+/*----- ADMIN LINK: Highlights the administration entry for logged-in administrators. -----*/
+.admin-nav-link { color: #ffffff; font-weight: 700; font-size: 14px; }
+.admin-nav-link:hover { color: #dddddd; }

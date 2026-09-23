@@ -1,0 +1,272 @@
+/*----- FILE: auth.css | CONTENT: Login and registration styling including form controls, colors, buttons, and responsive layout. -----*/
+
+.auth-page {
+  min-height: calc(100vh - 72px);
+  display: flex;
+  align-items: center;
+  padding: 50px 20px;
+  background: #f5f5f5;
+}
+
+.auth-container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.08);
+}
+
+/*----- Left Side -----*/
+
+.auth-info {
+  padding: 60px 50px;
+
+  background: #111111;
+  color: #ffffff;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.auth-brand {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 60px;
+}
+
+.auth-info h1 {
+  font-size: 46px;
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+
+.auth-info h1 span {
+  display: block;
+}
+
+.auth-info p {
+  max-width: 430px;
+
+  font-size: 16px;
+  line-height: 1.7;
+
+  color: #cccccc;
+}
+
+/*----- Right Side -----*/
+
+.auth-card {
+  padding: 50px;
+}
+
+.auth-header {
+  margin-bottom: 30px;
+}
+
+.auth-header h2 {
+  font-size: 30px;
+  margin-bottom: 8px;
+}
+
+.auth-header p {
+  color: #777777;
+}
+
+/*----- Form -----*/
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.input-wrapper {
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 14px;
+
+  border: 1px solid #dddddd;
+  border-radius: 8px;
+
+  color: #888888;
+
+  transition: border-color 0.2s;
+}
+
+.input-wrapper:focus-within {
+  border-color: #111111;
+}
+
+.input-wrapper input {
+  width: 100%;
+  height: 100%;
+
+  border: none;
+  outline: none;
+
+  padding: 0 10px;
+
+  font-size: 14px;
+}
+
+.password-toggle {
+  border: none;
+  background: none;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+
+  color: #777777;
+}
+
+/*----- Terms -----*/
+
+.auth-terms {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  margin: 5px 0 24px;
+
+  font-size: 13px;
+  color: #666666;
+}
+
+.auth-terms input {
+  width: 15px;
+  height: 15px;
+}
+
+/*----- Submit -----*/
+
+.auth-submit {
+  width: 100%;
+  height: 48px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #111111;
+  color: #ffffff;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.auth-submit:hover {
+  background: #333333;
+}
+
+/*----- Login -----*/
+
+.auth-switch {
+  text-align: center;
+
+  margin-top: 24px;
+
+  font-size: 14px;
+  color: #777777;
+}
+
+.auth-switch a {
+  margin-left: 5px;
+
+  font-weight: 600;
+  color: #111111;
+}
+
+.forgot-password {
+  text-align: right;
+  margin-top: -8px;
+  margin-bottom: 22px;
+}
+
+.forgot-password a {
+  font-size: 13px;
+  font-weight: 600;
+  color: #555555;
+}
+
+.forgot-password a:hover {
+  color: #111111;
+}
+
+/*----- Responsive -----*/
+
+@media (max-width: 800px) {
+  .auth-container {
+    grid-template-columns: 1fr;
+  }
+
+  .auth-info {
+    padding: 40px 30px;
+  }
+
+  .auth-brand {
+    margin-bottom: 30px;
+  }
+
+  .auth-info h1 {
+    font-size: 36px;
+  }
+
+  .auth-card {
+    padding: 35px 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-page {
+    padding: 20px 12px;
+  }
+
+  .auth-info h1 {
+    font-size: 30px;
+  }
+
+  .auth-card {
+    padding: 30px 20px;
+  }
+}
+/*----- AUTH ERROR: Displays validation or server errors clearly above the form. -----*/
+.auth-error {
+  /*----- color: Red text is used to communicate an error to the user. -----*/
+  color: #b42318;
+  /*----- background-color: Light red background makes the error easy to notice. -----*/
+  background-color: #fef3f2;
+  border: 1px solid #fecdca;
+  padding: 10px 12px;
+  border-radius: 8px;
+  margin-bottom: 18px;
+  font-size: 14px;
+}
+
+/*----- DISABLED BUTTON: Shows that a form request is currently being processed. -----*/
+.auth-submit:disabled {
+  /*----- opacity: Makes the disabled state visually clear. -----*/
+  opacity: 0.65;
+  cursor: not-allowed;
+}
