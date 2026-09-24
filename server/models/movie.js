@@ -23,7 +23,8 @@ const movieSchema = new mongoose.Schema(
     poster: { type: String, required: true },
     trailer: { type: String },
     rating: { type: Number, default: 0 },
-    //New Add
+
+    //New Add to implement Question a.
     director: { type:String, required: true, minlength: 2, maxlength:100, trim:true},
 
     /*----- SEATING CONFIGURATION: Stores the rows and number of seats in every row for this movie. -----*/

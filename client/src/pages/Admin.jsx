@@ -32,8 +32,10 @@ const emptyCategories = [
 /*----- MOVIE FORM: Contains all fields required by the Movie schema. -----*/
 const initialMovie = {
   title: "",
+
   // ADD THIS: Director field added for the modified Movie schema.
   director: "",
+  
   description: "",
   genre: "",
   language: "English",
@@ -149,7 +151,6 @@ function Admin() {
       const payload = {
         title: movieForm.title,
 
-        // ADD THIS: Send director to the Express API.
         director: movieForm.director,
 
         description: movieForm.description,
